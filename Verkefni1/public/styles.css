@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --question-bg-color: #f0f0f0;
+    --question-text-color: #333;
+    --answer-bg-color: #fff;
+    --correct-answer-color: #0c0;
+    --wrong-answer-color: #c00;
+    --font-family: 'Arial', sans-serif;
+    --font-size: 16px;
+}
+
+
+

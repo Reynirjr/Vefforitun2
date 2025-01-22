@@ -35,13 +35,18 @@ function geraIndexHtml(flokkar) {
       <head>
         <meta charset="UTF-8" />
         <title>Index</title>
-        <link rel="stylesheet" href="../public/styles.css" />
+        <link rel="stylesheet" href="../../public/styles.css" />
+        <width=device-width, initial-scale=1.0>
       </head>
       <body>
-        <h1>All Categories</h1>
+        <h1>Velkominn í Spurningarleikinn minn!</h1>
+        <h2>Veldu flokk til að byrja</h2>
         <ul>
           ${hlekkir}
         </ul>
+        <footer>
+          <a href="benjaminni.is> fara á síðuna mína</a>
+        </footer>
       </body>
     </html>
   `;
@@ -55,7 +60,7 @@ function geraFlokkHtml(data) {
         <head>
           <meta charset="UTF-8" />
           <title>Ógild gögn</title>
-          <link rel="stylesheet" href="../public/styles.css">
+          <link rel="stylesheet" href="../../public/styles.css">
         </head>
         <body>
           <h1>Ógild gögn</h1>
@@ -95,7 +100,7 @@ function geraFlokkHtml(data) {
       <head>
         <meta charset="UTF-8" />
         <title>${data.title || 'Flokkur'}</title>
-        <link rel="stylesheet" href="../public/styles.css">
+        <link rel="stylesheet" href="../../public/styles.css">
       </head>
       <body>
         <h1>${data.title || 'Ónefndur flokkur'}</h1>
