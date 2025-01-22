@@ -44,8 +44,9 @@ function geraIndexHtml(flokkar) {
         <ul>
           ${hlekkir}
         </ul>
-        <footer>
-          <a href="benjaminni.is> fara á síðuna mína</a>
+
+          <footer>
+          <a href="https://benjaminni.is/">fara á síðuna mína</a>
         </footer>
       </body>
     </html>
