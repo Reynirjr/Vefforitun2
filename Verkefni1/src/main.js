@@ -27,6 +27,26 @@ async function readJson(filePath) {
   }
 }
 
+/**
+ * Hjalpari sem stoppar html kóðann í spurningunum að verða 
+ * að alvöru html kóða
+ */
+function stoppaHTML(str) {
+  return str
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;');
+}
+
+/**
+ * 
+ * Tekur inn gögn um flokk og staðfestir að þau séu í réttu formi
+ * Ef gögnin eru ekki í réttu formi skrifar fallið út villuskilaboð
+ * 
+ * skilar "staðfestu" object {title, question} eða null ef gögnin eru ekki í réttu formi
+ *  
+ */
 
 function validateCategory(data) {
 
@@ -74,6 +94,7 @@ function validateCategory(data) {
 }
 
 
+
   /**
  * Skrifar HTML fyrir flokk
  * @param {object} data staðfest gögn
@@ -83,12 +104,12 @@ function validateCategory(data) {
     const questionsHtml = data.questions
       .map((q) => {
         const answersHtml = q.answers
-          .map((a) => `<li>${a.answer}</li>`)
+          .map((a) => `<li>${stoppaHTML(a.answer)}</li>`)
           .join('');
   
         return /* html */ `
           <div class = "spurning">
-            <h2>${q.question}</h2>
+            <h2>${stoppaHTML(q.question)}</h2>
             <ul>
               ${answersHtml}
             </ul>
@@ -176,7 +197,9 @@ async function main() {
     return;
   }
 
-  await writeHtml(indexJson);
+  const validCategories = [];
+
+  
 
   for (const item of indexJson) {
     if (!item.file) {
@@ -203,9 +226,15 @@ async function main() {
     const outPath = path.join('dist', outFileName); 
     await fs.writeFile(outPath, html, 'utf-8');
     console.log(`skrifaði ${outPath}`);
+
+    validCategories.push({
+      title: content.title,
+      file: outFileName,
+    });
   }
 
-  console.log('All done!');
+  await writeHtml(validCategories);
+  console.log('Ég er búúúinnn!');
 }
 
 main().catch((err) => {
