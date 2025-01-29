@@ -9,7 +9,7 @@ import { writeHtml } from './lib/writeHtml.js';
 const INDEX_PATH = './data/index.json';
 
 /**
- * Les index.json
+ * Les index.json 
  * skrifar síðan dist/index.html
  * gerir síðan fyrir hvern gildan flokk html skrá í dist
  */
@@ -26,7 +26,7 @@ export async function main() {
 
   for (const item of indexJson) {
     if (!item.file) {
-      console.log('Ekkert "file" í þessum flokk sleppum:', item);
+      console.log('Ekkert "file" í þessum flokk sleppi slepp:', item);
       continue;
     }
 
