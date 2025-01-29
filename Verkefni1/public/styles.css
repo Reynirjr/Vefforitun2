@@ -65,6 +65,68 @@ body li{
     margin-bottom: 20px;
 }
 
+.spurning{
+    display: inline-block;
+    text-align: center;
+    width: 80vw;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.answer {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    text-align: center;
+    width: 80vw; 
+    padding: 10px;
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+.answer:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.08);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease-in-out;
+}
+
+.answer.correct {
+    background-color: var(--correct-answer-color);
+}
+
+.answer.wrong {
+    background-color: var(--wrong-answer-color);
+}
+
+@media screen and (min-width: 768px) {
+    .spurning ul{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+    }
+    .answer {
+        width: 40vw;
+        height: 20vh;
+        grid-row: span 1;
+        grid-column: span 1;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .spurning ul{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 20px;
+    }
+    .answer {
+        width: 18vw;
+        height: 20vh;
+        grid-row: span 1;
+        grid-column: span 1;
+    }
+}
+
 footer a{
     text-decoration: none;
     position: fixed;

@@ -8,11 +8,12 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint": "eslint ./src/main.js",
     "start": "node ./src/main.js"
   },
   "devDependencies": {
     "eslint": "^9.18.0",
-    "vite": "^6.0.5"
+    "vite": "^6.0.5",
+    "vitest": "^3.0.4"
   }
 }

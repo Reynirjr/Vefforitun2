@@ -104,7 +104,16 @@ function validateCategory(data) {
     const questionsHtml = data.questions
       .map((q) => {
         const answersHtml = q.answers
-          .map((a) => `<li>${stoppaHTML(a.answer)}</li>`)
+          .map((a) => `
+          <li> 
+            <button 
+              class= "answer"
+              data-correct="${a.correct}"
+            >
+            ${stoppaHTML(a.answer)}
+            </button>
+          </li>`
+          )
           .join('');
   
         return /* html */ `
@@ -130,8 +139,24 @@ function validateCategory(data) {
     <h1>${data.title}</h1>
     ${questionsHtml}
     <footer>
-      <a href="www.benjaminni.is">Benjaminni.is</a>
+      <a href="./index.html">Aftur á forsíðu</a>
     </footer>
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const answerButtons = document.querySelectorAll('.answer');
+
+          answerButtons.forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+              const isCorrect = e.currentTarget.dataset.correct === 'true';
+              if (isCorrect) {
+                e.currentTarget.classList.add('correct');
+              } else {
+                e.currentTarget.classList.add('wrong');
+              }
+            });
+          });
+        });
+      </script>
   </body>
   </html>
     `;
@@ -168,12 +193,13 @@ async function writeHtml(indexData) {
         <link rel="stylesheet" href="../public/styles.css">
       </head>
       <body>
-        <h1>Verkefni 1 - Yfirlit</h1>
+        <h1>Verkefni 1</h1>
+        <h2>Spurningasíða, Veldu flokk:</h2>
         <ul>
           ${listItems}
         </ul>
         <footer>
-          <a href="www.benjaminni.is">Benjaminni.is</a>
+          <a href="https://benjaminni.is/">Benjaminni.is</a>
         </footer>
       </body>
     </html>
