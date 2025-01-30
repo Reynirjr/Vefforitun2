@@ -17,6 +17,11 @@ export async function main() {
 
   await fs.mkdir('dist', { recursive: true });
 
+  await fs.copyFile(
+    path.join('public', 'styles.css'),
+    path.join('dist', 'styles.css')
+  );
+
   const indexJson = await readJson(INDEX_PATH);
   if (!Array.isArray(indexJson)) {
     console.error('index.json er ekki á réttu formi (fylki)');

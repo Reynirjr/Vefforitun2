@@ -28,7 +28,7 @@ export async function writeHtml(indexData) {
       <head>
         <title>Verkefni 1</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="../public/styles.css">
+        <link rel="stylesheet" href="./styles.css">
       </head>
       <body>
         <h1>Verkefni 1</h1>

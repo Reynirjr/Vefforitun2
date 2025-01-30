@@ -39,7 +39,7 @@
   <head>
     <meta charset="utf-8">
     <title>${data.title}</title>
-    <link rel="stylesheet" href="../public/styles.css">
+    <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
     <h1>${data.title}</h1>
