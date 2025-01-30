@@ -14,6 +14,9 @@ const INDEX_PATH = './data/index.json';
  * gerir síðan fyrir hvern gildan flokk html skrá í dist
  */
 export async function main() {
+
+  await fs.mkdir('dist', { recursive: true });
+
   const indexJson = await readJson(INDEX_PATH);
   if (!Array.isArray(indexJson)) {
     console.error('index.json er ekki á réttu formi (fylki)');

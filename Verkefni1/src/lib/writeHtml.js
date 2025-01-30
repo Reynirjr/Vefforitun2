@@ -8,7 +8,7 @@ import path from 'node:path';
  */
 export async function writeHtml(indexData) {
 
-  await fs.mkdir('dist', { recursive: true });
+  
 
   const htmlFilePath = path.join('dist', 'index.html');
 
