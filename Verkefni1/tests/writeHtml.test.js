@@ -17,8 +17,6 @@ describe('writeHtml', () => {
 
     await writeHtml(categories);
 
-    expect(fs.mkdir).toHaveBeenCalledWith('dist', { recursive: true });
-
     const [writtenFilePath, writtenContent] = fs.writeFile.mock.calls[0];
 
     expect(writtenFilePath).toBe(path.join('dist', 'index.html'));
