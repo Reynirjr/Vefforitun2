@@ -1,0 +1,52 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`geraFlokkHtml > matches snapshot 1`] = `
+"
+  <!DOCTYPE html>
+  <html lang="is">
+  <head>
+    <meta charset="utf-8">
+    <title>Snapshot Title</title>
+    <link rel="stylesheet" href="../public/styles.css">
+  </head>
+  <body>
+    <h1>Snapshot Title</h1>
+    
+          <div class = "spurning">
+            <h2>Snapshot Q?</h2>
+            <ul>
+              
+          <li> 
+            <button 
+              class= "answer"
+              data-correct="true"
+            >
+            Snapshot A1
+            </button>
+          </li>
+            </ul>
+          </div>
+        
+    <footer>
+      <a href="./index.html">Aftur á forsíðu</a>
+    </footer>
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const answerButtons = document.querySelectorAll('.answer');
+
+          answerButtons.forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+              const isCorrect = e.currentTarget.dataset.correct === 'true';
+              if (isCorrect) {
+                e.currentTarget.classList.add('correct');
+              } else {
+                e.currentTarget.classList.add('wrong');
+              }
+            });
+          });
+        });
+      </script>
+  </body>
+  </html>
+    "
+`;
