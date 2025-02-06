@@ -25,21 +25,4 @@ describe('geraFlokkHtml', () => {
     expect(html).toContain('data-correct="true"');
     expect(html).toContain('data-correct="false"');
   });
-
-  // Option 1: Remove or comment out this snapshot test
-  // it('matches snapshot', () => {
-  //   const data = {
-  //     title: 'Snapshot Title',
-  //     questions: [
-  //       {
-  //         question: 'Snapshot Q?',
-  //         answers: [{ answer: 'Snapshot A1', correct: true }],
-  //       },
-  //     ],
-  //   };
-  //   const html = geraFlokkHtml(data);
-  //   expect(html).toMatchSnapshot();
-  // });
-
-  // Option 2: Re-run tests with an update snapshot flag (e.g. vitest --update)
 });
