@@ -18,7 +18,7 @@ export async function writeHtml(indexData) {
         return '';
       }
       const outFileName = item.file.replace('.json', '.html');
-      return `<li><a href="${outFileName}">${item.title}</a></li>`;
+      return `<li class="flokkar"><a href="${outFileName}">${item.title}</a></li>`;
     })
     .join('\n');
 
@@ -32,14 +32,37 @@ export async function writeHtml(indexData) {
         <link rel="stylesheet" href="./styles.css">
       </head>
       <body>
-        <h1>Verkefni 1</h1>
-        <h2>Spurningasíða, Veldu flokk:</h2>
-        <ul>
-          ${listItems}
-        </ul>
-        <footer>
-          <a href="https://benjaminni.is/">Benjaminni.is</a>
-        </footer>
+        <header>
+          <div id="background-wrap">
+            <div class="x1">
+              <div class="sky"></div>
+            </div>
+
+            <div class="x2">
+              <div class="sky"></div>
+            </div>
+
+            <div class="x3">
+              <div class="sky"></div>
+            </div>
+
+            <div class="x4">
+              <div class="sky"></div>
+            </div>
+
+            <div class="x5">
+              <div class="sky"></div>
+            </div>
+          
+          </div>
+        </header>
+        <main>
+          <h1>Verkefni 1</h1>
+          <h2>Spurningasíða, Veldu flokk:</h2>
+          <ul>
+            ${listItems}
+          </ul>
+        </main>
       </body>
     </html>
       `;

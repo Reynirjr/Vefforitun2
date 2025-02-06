@@ -43,6 +43,30 @@
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
+  <header>
+        <div id="background-wrap">
+          <div class="x1">
+            <div class="sky"></div>
+          </div>
+
+          <div class="x2">
+            <div class="sky"></div>
+          </div>
+
+          <div class="x3">
+            <div class="sky"></div>
+          </div>
+
+          <div class="x4">
+            <div class="sky"></div>
+          </div>
+
+          <div class="x5">
+            <div class="sky"></div>
+          </div>
+          
+        </div>
+      </header>
     <h1>${data.title}</h1>
     ${questionsHtml}
     <footer>
