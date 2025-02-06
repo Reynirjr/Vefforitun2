@@ -21,7 +21,7 @@ describe('writeHtml', () => {
 
     expect(writtenFilePath).toBe(path.join('dist', 'index.html'));
 
-    expect(writtenContent).toContain('<li><a href="html.html">HTML</a></li>');
-    expect(writtenContent).toContain('<li><a href="css.html">CSS</a></li>');
+    expect(writtenContent).toContain('<li class="flokkar"><a href="html.html">HTML</a></li>');
+    expect(writtenContent).toContain('<li class="flokkar"><a href="css.html">CSS</a></li>');
   });
 });
